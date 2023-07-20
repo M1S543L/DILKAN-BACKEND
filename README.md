@@ -20,6 +20,3 @@ Este repositorio contiene el código del backend de Dilkan, desarrollado utiliza
 ## Instalación
 
 1. Clona este repositorio en tu máquina local:
-
-   ```bash
-   git clone https://github.com/tu-usuario/dilkan-backend.git
