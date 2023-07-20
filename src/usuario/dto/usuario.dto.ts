@@ -1,7 +1,8 @@
 export class CreateUsuarioDTO{
-    nombreUsuario: string;
-    correoElectronico: string;
-    contrasena: string;
-    fotoPerfil: string;
-    plan: string;
+    readonly nombreUsuario: string;
+    readonly correoElectronico: string;
+    readonly contrasena: string;
+    readonly fotoPerfil: string;
+    readonly plan: object;
+    readonly createdAt: Date;
 }

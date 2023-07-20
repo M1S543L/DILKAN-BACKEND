@@ -5,6 +5,7 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
 
+
 @Module({
   imports: [ UsuarioModule, MongooseModule.forRoot('mongodb+srv://M1S543L:DilanAndino1994@clusterdilkan.pll3f9l.mongodb.net/')],
   controllers: [AppController],
