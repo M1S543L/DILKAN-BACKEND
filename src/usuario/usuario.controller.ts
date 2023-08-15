@@ -68,8 +68,6 @@ export class UsuarioController {
         usuario: usuario,
         token: token,
       });
-    }
+    } 
 
-
-    
 }

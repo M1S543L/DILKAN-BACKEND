@@ -14,7 +14,7 @@ export class UsuarioService {
         const usuario = new this.usuarioModel(createUsuarioDTO);
         return await usuario.save();
     }
-
+    
 
     //metodo que obtiene todos los usuarios
     async getUsuarios(): Promise<Usuario[]>{ // Promise<Usuario[]> is the return type
