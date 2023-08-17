@@ -14,7 +14,7 @@ export class UsuarioController {
         const usuario = await this.usuarioService.createUsuario(createUsuarioDTO);
 
         return res.status(HttpStatus.OK).json({
-            mensaje: 'producto creado satisfactoriamente',
+            mensaje: 'Usuario creado satisfactoriamente',
             usuario: usuario
         })
     }
@@ -69,5 +69,32 @@ export class UsuarioController {
         token: token,
       });
     } 
+
+    //metodo para eliminar un usuario
+    @Delete('/eliminar/:id')
+    async deleteUsuario(@Res() res, @Param('id') id: string){
+        const usuario = await this.usuarioService.deleteUsuario(id);
+        if(!usuario){
+            throw new NotFoundException('Usuario no encontrado');
+        }
+        return res.status(HttpStatus.OK).json({
+            mensaje: 'Usuario eliminado satisfactoriamente',
+            usuario: usuario
+        })
+    }
+
+    //metodo para actualizar un usuario
+    @Put('/actualizar/:id')
+    async updateUsuario(@Res() res, @Param('id') id: string, @Body() createUsuarioDTO){
+        const usuario = await this.usuarioService.updateUsuario(id, createUsuarioDTO);
+        if(!usuario){
+            throw new NotFoundException('Usuario no encontrado');
+        }
+        return res.status(HttpStatus.OK).json({
+            mensaje: 'Usuario actualizado satisfactoriamente',
+            usuario: usuario
+        })
+    }
+    
 
 }

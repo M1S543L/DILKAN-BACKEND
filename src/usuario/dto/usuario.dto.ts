@@ -5,4 +5,4 @@ export class CreateUsuarioDTO{
     readonly fotoPerfil: string;
     readonly plan: object | string;
     readonly createdAt: Date;
-}
+} 

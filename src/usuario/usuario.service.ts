@@ -55,7 +55,16 @@ export class UsuarioService {
         return token;
       }
     
+      //metodo para eliminar un usuario
+    async deleteUsuario(usuarioID: string): Promise<Usuario>{
+        return await this.usuarioModel.findByIdAndDelete(usuarioID);
+    }
 
+    //metodo para actualizar un usuario
+    async updateUsuario(usuarioID: string, createUsuarioDTO: CreateUsuarioDTO): Promise<Usuario>{
+        return await this.usuarioModel.findByIdAndUpdate(usuarioID, createUsuarioDTO, {new: true});
+    }
+    
 
 
 }
