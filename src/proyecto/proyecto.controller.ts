@@ -46,10 +46,10 @@ export class ProyectoController {
         return this.proyectoService.getProyectosUsuario(usuario);
     }
 
-    //Metodo para obtener todos los proyectos de una carpeta
-    @Get('/listar/proyectos/carpeta/:carpeta')
-    async getProyectosCarpeta(@Param('carpeta') carpeta: string): Promise<Proyecto[] | null> {
-        return this.proyectoService.getProyectosCarpeta(carpeta);
+    //Metodo para obtener todos los proyectos de una colaborador
+    @Get('/listar/proyectos/colaborador/:colaborador')
+    async getProyectoscolaborador(@Param('colaborador') colaborador: string): Promise<Proyecto[] | null> {
+        return this.proyectoService.getProyectosColaborador(colaborador);
     }
 
     //metodo para eliminar un proyecto
@@ -78,6 +78,18 @@ export class ProyectoController {
         })
     }
     
+    //metodo para agregar colaborador a un proyecto
+    @Put('/agregarColaborador/:id')
+    async addColaborador(@Res() res, @Param('id') id: string, @Body() createProyectoDTO){
+        const proyecto = await this.proyectoService.addColaborador(id, createProyectoDTO);
+        if(!proyecto){
+            throw new NotFoundException('Proyecto no encontrado');
+        }
+        return res.status(HttpStatus.OK).json({
+            mensaje: 'Colaborador agregado satisfactoriamente',
+            proyecto: proyecto
+        })
+    }
 
 
 }

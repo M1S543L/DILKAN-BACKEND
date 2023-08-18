@@ -13,7 +13,7 @@ export const proyectoSchema = new Schema( {
     codigoJs: {
         type: Schema.Types.Mixed,
     required: true,},
-    carpeta: {
+    colaboradores: {
         type: Schema.Types.ObjectId,
     required: true,},
     usuario: {

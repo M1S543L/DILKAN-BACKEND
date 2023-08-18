@@ -34,10 +34,10 @@ export class ProyectoService {
         const proyectos = await this.proyectoModel.find({usuario});
         return proyectos;}
 
-//metodo que obtiene todos los proyectos de una carpeta
-    async getProyectosCarpeta(carpeta: string): Promise<Proyecto[]>{ // Promise<Proyecto[]> is the return type
+//metodo que obtiene todos los proyectos de una colaborador
+    async getProyectosColaborador(colaborador: string): Promise<Proyecto[]>{ // Promise<Proyecto[]> is the return type
 
-        const proyectos = await this.proyectoModel.find({carpeta});
+        const proyectos = await this.proyectoModel.find({colaborador});
         return proyectos;}
 
 //metodo para eliminar un proyecto
@@ -49,6 +49,12 @@ export class ProyectoService {
     async updateProyecto(proyectoID: string, createProyectoDTO: CreateProyectoDTO): Promise<Proyecto>{
         return await this.proyectoModel.findByIdAndUpdate(proyectoID, createProyectoDTO, {new: true});
     }
+
+//metodo para agregar colaborador a un proyecto
+    async addColaborador(proyectoID: string, colaborador: string): Promise<Proyecto>{
+        return await this.proyectoModel.findByIdAndUpdate(proyectoID, { $push: { colaboradores: colaborador } }, {new: true});
+    }
+
     
 
 }
