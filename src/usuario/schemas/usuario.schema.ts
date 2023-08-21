@@ -23,7 +23,7 @@ export const usuarioSchema = new Schema( {
     type: Schema.Types.Mixed, // Usamos el tipo Mixed para permitir tanto string como object
     required: true,
   },
- 
+  
 });
 
 

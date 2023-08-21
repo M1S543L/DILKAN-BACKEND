@@ -3,7 +3,7 @@ import { CreateUsuarioDTO } from './dto/usuario.dto';
 import { UsuarioService } from './usuario.service';
 import { Usuario } from './interfaces/usuario.interface';
 @Controller('usuarios')
-export class UsuarioController {
+export class UsuarioController { 
 
     constructor(private readonly usuarioService: UsuarioService){
     //crear un nuevo usuario  
@@ -39,11 +39,7 @@ export class UsuarioController {
         return this.usuarioService.findByEmail(correo);
     }
 
-    //Metodo para autentificar un usuario
-    @Get('/login/:correo/:contrasena')
-    async autentificar(@Param('correo') correo: string, @Param('contrasena') contrasena: string): Promise<Usuario | null> {
-        return this.usuarioService.autentificacion(correo, contrasena);
-    }
+  
 
     //metodo para hacer login de un usuario con un jwt
     @Post('/login')
