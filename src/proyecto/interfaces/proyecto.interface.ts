@@ -6,6 +6,6 @@ export interface Proyecto extends Document{
     readonly codigoCss: object|string;
     readonly codigoJs: object|string;
     readonly colaboradores: object|string;
-    readonly usuario: object|string;
+    readonly usuario: string;
     
 }

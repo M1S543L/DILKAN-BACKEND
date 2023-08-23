@@ -14,10 +14,10 @@ export const proyectoSchema = new Schema( {
         type: Schema.Types.Mixed,
     required: true,},
     colaboradores: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.Mixed,
     required: true,},
     usuario: {
-        type: Schema.Types.ObjectId,
+        type: Schema.Types.String,
     required: true,},
     
 

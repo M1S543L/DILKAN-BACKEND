@@ -37,10 +37,10 @@ export class ProyectoController {
     //Metodo para obtener un proyecto por su nombre
     @Get('/listar/proyecto/:nombre')
     async findByNombre(@Param('nombre') nombre: string): Promise<Proyecto | null> {
-        return this.proyectoService.findByNombre(nombre);
+        return this.proyectoService.findByNombre(nombre); 
     }
 
-    //Metodo para obtener todos los proyectos de un usuario
+    //Metodo para obtener todos los proyectos de un usuario 
     @Get('/listar/proyectos/:usuario')
     async getProyectosUsuario(@Param('usuario') usuario: string): Promise<Proyecto[] | null> {
         return this.proyectoService.getProyectosUsuario(usuario);

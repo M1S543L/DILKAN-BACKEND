@@ -6,6 +6,6 @@ readonly codigoHtml: object|string;
 readonly codigoCss: object|string;
 readonly codigoJs: object|string;
 readonly colaboradores: object|string;
-readonly usuario: object|string;
+readonly usuario: string;
 
 }
