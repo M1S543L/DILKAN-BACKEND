@@ -5,7 +5,7 @@ import { Proyecto } from './interfaces/proyecto.interface';
 @Controller('proyectos')
 export class ProyectoController {
 
-    constructor(private readonly proyectoService: ProyectoService){}
+    constructor(private readonly proyectoService: ProyectoService){} 
 
     //crear un nuevo proyecto
     @Post('/crear')

@@ -9,7 +9,6 @@ import { ProyectoModule } from './proyecto/proyecto.module';
 
 @Module({
   imports: [ UsuarioModule, MongooseModule.forRoot('mongodb+srv://M1S543L:DilanAndino1994@clusterdilkan.pll3f9l.mongodb.net/'),
-  
   ProyectoModule],
   controllers: [AppController],
   providers: [AppService],

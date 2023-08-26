@@ -6,19 +6,19 @@ export const proyectoSchema = new Schema( {
     required: true,},
     codigoHtml: {
         type: Schema.Types.Mixed,
-    required: true,},
+    required: false,},
     codigoCss: {
         type: Schema.Types.Mixed,
-    required: true,},
+    required: false,},
     codigoJs: {
         type: Schema.Types.Mixed,
-    required: true,},
+    required: false,},
     colaboradores: {
         type: Schema.Types.Mixed,
-    required: true,},
+    required: false,},
     usuario: {
         type: Schema.Types.String,
-    required: true,},
+    required: false,},
     
 
 } );

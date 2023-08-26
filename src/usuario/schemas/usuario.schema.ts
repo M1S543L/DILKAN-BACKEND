@@ -17,11 +17,11 @@ export const usuarioSchema = new Schema( {
   },
   fotoPerfil: {
     type: String,
-    required: true,
+    required: false,
   },
   plan: {
     type: Schema.Types.Mixed, // Usamos el tipo Mixed para permitir tanto string como object
-    required: true,
+    required: false,
   },
   
 });
